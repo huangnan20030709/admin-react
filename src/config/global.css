@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* 一级背景色 工具栏*/
+  --color-bg-1: rgb(35, 35, 36);
+  /* 二级背景色  */
+  --color-bg-2: rgb(41, 41, 42);
+  /* 三级背景色  选中*/
+  --color-bg-3: rgb(52, 52, 53);
+  /* 四级背景色  悬浮选框*/
+  --color-bg-4: rgb(71, 71, 73);
+
+  --color-text-1: rgb(233, 233, 234);
+  --color-text-2: rgb(191, 191, 192);
+  /* 禁用时文字颜色 */
+  --color-text-3: rgb(115, 115, 117);
+
+  /* 链接颜色 */
+  --color-link: rgb(60, 125, 255);
+
+  --color-border: rgb(255, 168, 0);
+
+  background-color: var(--color-bg-2);
+}
+* {
+  box-sizing: border-box !important;
+}
+
+/* 以下为重置antd的组件样式 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: var(--color-text-2) !important;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: var(--color-text-2) !important;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--color-text-2) !important;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: var(--color-text-2) !important;
+}
+
+.anticon {
+  color: var(--color-text-2) !important;
+}
+
+.ant-input-affix-wrapper {
+  background-color: var(--color-bg-3) !important;
+  border-color: transparent;
+}

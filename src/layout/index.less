@@ -1,0 +1,83 @@
+@header-height: 60px;
+@layout-min-width: 500px;
+
+.layout {
+  width: 100%;
+  height: 100%;
+}
+
+.layout-header {
+  background-color: var(--color-bg-1);
+  position: fixed;
+  width: 100%;
+  min-width: @layout-min-width;
+  top: 0;
+  left: 0;
+  height: @header-height;
+  z-index: 100;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.wrapper {
+  display: flex;
+  margin-top: calc(@header-height);
+}
+
+.layout-sidebar {
+  background-color: var(--color-bg-1);
+  border-right: 0.5px solid var(--color-border);
+  position: fixed;
+  height: 100%;
+}
+
+.layout-content {
+  background-color: var(--color-bg-3);
+  width: 100%;
+  min-height: 100vh;
+  min-width: @layout-min-width;
+
+  box-sizing: border-box;
+  .tabList {
+    margin-left: 50px;
+  }
+  .main {
+    padding: 10px 20px 0 22px;
+    position: relative;
+
+    // 页面切换过渡动画
+    .page {
+      position: absolute;
+    }
+
+    // 页面切换过渡动画 --- 进入
+    .page-enter {
+      opacity: 0;
+      transform: translateX(-2.5%);
+    }
+
+    // 页面切换过渡动画 --- 进入（被激活）
+    .page-enter-active {
+      opacity: 1;
+      transform: translateX(0%);
+      transition:
+        opacity 500ms,
+        transform 500ms;
+    }
+
+    // 页面切换过渡动画 --- 离开
+    .page-exit {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+
+    // 页面切换过渡动画 --- 离开（被激活）
+    .page-exit-active {
+      opacity: 0;
+      transform: translateX(5%);
+
+      transition:
+        opacity 500ms,
+        transform 500ms;
+    }
+  }
+}
